@@ -22,7 +22,7 @@ int binarySearch(int arr[], int l, int r, int x)
     return -1; //If this function returns -1, then the element is not present in array.
 } 
   
-int main(void) 
+int main()
 { 
     int arr[] = { 2, 3, 4, 10, 40 }; 
     int x = 10; 
