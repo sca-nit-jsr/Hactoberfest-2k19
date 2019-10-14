@@ -10,7 +10,8 @@ windows users can download and install git commandline from [here](https://git-s
 
 
 ## Steps for Your First PR :
-Follow the given Videos for learning how to make your first PR !!
+Follow the given Videos for learning how to make your first PR !!!
+
 [Your First PR (Part-1)](https://youtu.be/lgGBELUIQio)
 
 [Your First PR (Part-2)](https://youtu.be/W1Lryq-afSo)
