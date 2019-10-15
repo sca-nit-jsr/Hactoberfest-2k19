@@ -15,6 +15,8 @@
 
 [EdgarACarneiro](https://github.com/EdgarACarneiro)
 
+[Pedro Vieira](https://github.com/PedrV)
+
 
 
 ## REPOSITORY MAINTAINER :
