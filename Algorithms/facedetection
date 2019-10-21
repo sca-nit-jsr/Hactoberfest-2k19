@@ -1,0 +1,18 @@
+import cv2
+import sys
+import os
+
+# cascPath = sys.argv[1]
+faceCascade = cv2.CascadeClassifier("D:\\face.xml")
+name = "shubham"
+try:
+    os.mkdir("dataset")
+except:
+    pass
+try:
+    os.mkdir("dataset"+"\\"+name)
+except:
+    pass
+video_capture = cv2.VideoCapture(0)
+new_path = "dataset\\shubham"
+i = 0
