@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+    char a;
+    int i,s=0,n=0,ch=0;
+
+    printf("Enter your input:");
+
+    while(a!='#')
+    {
+        scanf("%c",&a);
+        if(a=='\n')
+        {
+            n++;
+        }
+        else if(a==' ')
+        {
+            s++;
+        }
+        else
+            ch++;
+    }
+
+    {
+        printf("Newline%d",n);
+        printf("\nSpaces%d",s);
+        printf("\nOther Characters%d",ch);
+    }
+
+
+    return 0;
+}
