@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+main()
+{
+int a,b,c,d;
+float x1,x2,r,img;
+printf("enter the value of ax+by+c");
+scanf("%d %d %d",&a, &b, &c);
+d=(b*b)-(4*a*c);
+if(d==0)
+{
+x1=x2=-b/(2*a);
+printf("\n x1=%f\n x2=%f",x1,x2);
+}
+else if(d>0)
+{
+x1=((-b+sqrt(d)))/(2*a);
+x2=((-b-sqrt(d)))/(2*a);
+printf("\n x1=%f\n x2=%f",x1,x2);
+
+}
+else
+r=-b/(2*a);
+img=(sqrt(-d))/(2*a);
+printf("\n Roots = %f (+-)%f",r,img);
+}
