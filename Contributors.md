@@ -28,7 +28,7 @@
 [Mohd Mustak](https://github.com/mmstq)
 
 
-
+[Aman Goyal](https://github.com/Aman1727/Hactoberfest-2k19/edit/master/Contributors.md)
 
 ## REPOSITORY MAINTAINER :
 Name : Deepak Chauhan
