@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int ar[n];
+        for(int i=0;i<n;i++)
+        {
+            cin>>ar[i];
+            
+        }
+            long long c=0,sum=0,ss=0,fs=0;
+        for(int j=0;j<=n;j++)
+        {
+            if(ar[j]!=-1&&j<n)
+            {
+                sum=sum+ar[j];
+                ss=ss+ar[j]*ar[j];
+                c++;
+                
+            }
+            else
+            {
+                if(c>1)
+                {
+                    fs=fs+(sum*sum-ss)/2;
+                }
+                sum=0;
+                ss=0;
+                c=0;
+                
+            }
+            
+            
+        }
+        cout<<fs<<"\n";
+        
+    }
+}
