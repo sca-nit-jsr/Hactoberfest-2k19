@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+    int n,s,i;
+    printf("\nEnter the number in integer: ");
+    scanf("%d",&n);
+    for(i=31;i>=0;i--)
+    {
+        s=n>>i;
+        if(s&1!=0)
+            printf("1");
+        else
+            printf("0");
+    }
+    return 0;
+}
