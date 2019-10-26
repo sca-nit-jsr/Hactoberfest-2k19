@@ -22,10 +22,11 @@
 
 [Anand Bhagwat](https://github.com/anandbhagwat)
 
-
 [Huy Pham](https://github.com/coder7eeN)
 
 [Mohd Mustak](https://github.com/mmstq)
+
+[Mayank Singh](https://github.com/mayanksingh1811)
 
 
 
