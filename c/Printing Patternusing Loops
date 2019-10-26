@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+
+    int n,m,i,j,k;
+    scanf("%d", &n);
+        m=n;
+    for(i=n;i>=1;i--)
+    {
+        for(j=n;j>=i;j--)
+        {
+            printf("%d ",j);
+        }
+        for(k=1;k<=2*i-3;k++)
+        {
+            printf("%d ",m);
+        }
+        for(j=i;j<=n;j++)
+        {
+            if(j==1)
+                continue;
+            printf("%d ",j);
+        }
+        printf("\n");
+        m--;
+    }
+    m=2;
+    for(i=2;i<=n;i++)
+    {
+        for(j=n;j>i;j--)
+        {
+            printf("%d ",j);
+        }
+        for(k=1;k<2*i-1;k++)
+        {
+            printf("%d ",m);
+        }
+        for(j=i;j<=n;j++)
+        {
+            printf("%d ",j);
+        }
+        printf("\n");
+        m++;
+    }
+    return 0;
+}
