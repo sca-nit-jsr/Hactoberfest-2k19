@@ -1,0 +1,222 @@
+#include<stdio.h>
+#include"bst.h"
+
+
+struct node
+{
+	int data;
+	struct node* left;
+	struct node* right;
+};
+typedef struct node node_t;
+
+struct tree
+{
+	node_t* root;
+};
+typedef struct tree tree_t;
+
+void insert_Node(tree_t*, int);
+void initialize_Tree(tree_t*);
+void inorder_Traversal(tree_t*);
+void preorder_Traversal(tree_t*);
+void postorder_Traversal(tree_t*);
+int find_Min(tree_t*);
+int find_Max(tree_t*);
+void delete_Node(tree_t*, int);
+
+#include<stdio.h>
+#include<stdlib.h>
+#include"bst.h"
+
+void initialize_Tree(tree_t* t)
+{
+	t -> root = NULL;
+}
+
+node_t* create_Node(int data)
+{
+	node_t* new = (node_t*)malloc(sizeof(node_t));
+	new -> data = data;
+	new -> left = NULL;
+	new -> right = NULL;
+
+	return new;
+}
+
+node_t* rec_Insert_Node(node_t* root, node_t* new)
+{
+	if(root == NULL)
+	{
+		root = new;
+	}
+	else if(root -> data > new -> data)
+	{
+		root -> left = rec_Insert_Node(root -> left, new);
+	}
+	else if(root -> data < new -> data)
+	{
+		root -> right = rec_Insert_Node(root -> right, new);
+	}
+	return root;
+}
+
+void insert_Node(tree_t* t, int data)
+{
+	node_t* new = create_Node(data);
+	t -> root = rec_Insert_Node(t -> root, new);
+}
+
+void rec_Inorder_Traversal(node_t* root)
+{
+	if(root != NULL)
+	{
+		rec_Inorder_Traversal(root -> left);
+		printf("%d\t", root -> data);
+		rec_Inorder_Traversal(root -> right);	
+	}
+	
+}
+
+void inorder_Traversal(tree_t* t)
+{
+	rec_Inorder_Traversal(t -> root);
+	printf("\n");
+}
+
+
+void rec_Preorder_Traversal(node_t* root)
+{
+	if(root != NULL)
+	{
+		printf("%d\t", root -> data);	
+		rec_Preorder_Traversal(root -> left);
+		rec_Preorder_Traversal(root -> right);
+	}
+	
+}
+
+void preorder_Traversal(tree_t* t)
+{
+	rec_Preorder_Traversal(t -> root);
+	printf("\n");
+}
+
+void rec_Postorder_Traversal(node_t* root)
+{
+	if(root != NULL)
+	{
+		rec_Postorder_Traversal(root -> left);
+		rec_Postorder_Traversal(root -> right);
+		printf("%d\t", root -> data);	
+	}
+	
+}
+
+void postorder_Traversal(tree_t* t)
+{
+	rec_Postorder_Traversal(t -> root);
+	printf("\n");
+}
+
+int find_Min(tree_t* t)
+{
+	node_t* temp = t -> root;
+	while(temp -> left != NULL)
+	{
+		temp = temp -> left;
+	}
+	return temp -> data;
+}
+
+
+int find_Max(tree_t* t)
+{
+	node_t* temp = t -> root;
+	while(temp -> right != NULL)
+	{
+		temp = temp -> right;
+	}
+	return temp -> data;
+}
+
+
+node_t* rec_Delete_Node(node_t* root, int data)
+{
+	if(root == NULL)
+	{
+		return root;
+	}
+	else if(root -> data > data)
+	{
+		root -> left = rec_Delete_Node(root -> left, data);
+	}
+	else if(root -> data < data)
+	{
+		root -> right = rec_Delete_Node(root -> right, data);
+	}
+	else
+	{
+		if(root -> left == NULL)
+		{
+			//node_t* temp = root;
+			node_t* temp1 = root -> right;
+			free(root);
+			return temp1;
+		}
+		else if(root -> right == NULL)
+		{
+			node_t* temp1 = root -> left;
+			free(root);
+			return temp1;
+		}
+		else
+		{
+			//node_t* temp = root;
+			node_t* temp = root -> right;
+		
+			while(temp -> left != NULL)
+			{
+				temp = temp -> left;
+			}
+			root -> data = temp -> data;
+
+			root -> right = rec_Delete_Node(root -> right, temp -> data);
+		}
+	}
+
+	return root;
+}
+
+void delete_Node(tree_t* t, int data)
+{
+	t -> root = rec_Delete_Node(t -> root, data);
+}
+
+
+int main()
+{
+	tree_t t;
+	initialize_Tree(&t);
+
+	
+	int a[] = {40, 50, 35, 38, 80, 42, 20, 90, 100};
+	for(int i = 0; i < 9; ++i)
+	{
+		insert_Node(&t, a[i]);
+	}
+
+	inorder_Traversal(&t);
+	preorder_Traversal(&t);
+	postorder_Traversal(&t);
+
+	printf("Min: %d\n", find_Min(&t));
+	printf("Max: %d\n", find_Max(&t));
+
+	//delete_Node(&t, 35);
+	//inorder_Traversal(&t);
+
+	delete_Node(&t, 50);
+	inorder_Traversal(&t);
+
+}
