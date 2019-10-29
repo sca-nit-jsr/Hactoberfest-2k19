@@ -1,0 +1,21 @@
+
+// Sample code to perform I/O:
+#include <stdio.h>
+
+int main()
+{
+	 long int num[100000],i,m=1;
+	 int n;
+	 scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+	scanf("%d",&num[i]);
+	}
+	for(i=0;i<n;i++)
+	{
+	    m=m*num[i]%1000000007;
+	}
+	printf("%d",m);
+	return 0;
+	
+}
