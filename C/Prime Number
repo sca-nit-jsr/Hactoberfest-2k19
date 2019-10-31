@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(){
+	int num,i,fact,j;
+	scanf("%d", &num);              			// Reading input from STDIN
+//	printf("Input number is %d.\n", num);  // Writing output to STDOUT
+	for(i=2;i<=num;i++)
+	{
+	    fact=0;
+	    for(j=2;j<=i;j++)
+	    {
+	        if(i%j==0)
+	        fact++;
+	    }
+	    if(fact==1)
+	    printf("%d ",i);
+	}
+
+
+
+}
