@@ -2,6 +2,7 @@
 
 int main(){
 	int num,i,fact,j;
+	printf("enter a number:");
 	scanf("%d", &num);              			// Reading input from STDIN
 //	printf("Input number is %d.\n", num);  // Writing output to STDOUT
 	for(i=2;i<=num;i++)
